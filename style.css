@@ -1,15 +1,45 @@
-body{
-    font-family: font-family: 'Italiana', serif;
-    font-family: 'Poppins', sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-div {
-    background-color: #900;
+/*Formatações genéricas*/
+body{
+    font-family: 'Italiana', serif;
+}
+
+ul {
+    list-style: none;
+    
 }
 
 a{
     text-decoration: none;
+    color: #fff;
+    font-weight: 700;
 }
 
 img{
-    background: no repeat;
+    background-repeat: no-repeat;
+    width: 100%;
 }
+
+.header-page{
+    height: 80px;
+    padding: 0 30px;
+    background-color: red;
+    display: flex;
+    align-items: center; /*alinha items ao meio*/
+    justify-content: space-between; /* ele deixa um no começo e o outro no fim e o resto ele alinha aao meio */
+    /* justify-content: space-around; do meio pro final alinha ao meios os dois */
+}
+
+.header-menu ul{
+    display: flex;
+}
+
+.header-menu li{
+    margin-left: 20px;
+    
+}
+
