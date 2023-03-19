@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root {
     --color-light: #ffffff;
     --color-orange: #e6630d;
@@ -41,13 +45,14 @@ img{
 }
 
 .header-page{
+    width: 100%;
     height: 100px;
     padding: 0 30px;
     display: flex;
     align-items: center; /*alinha items ao meio*/
     justify-content: space-between; /* ele deixa um no começo e o outro no fim e o resto ele alinha aao meio */
     /* justify-content: space-around; do meio pro final alinha ao meios os dois */
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     z-index: 1;
@@ -61,6 +66,11 @@ img{
     margin-left: 20px;
     
 }
+
+.active-scroll {
+    background-color: rgba(1, 1, 70, 90);
+}
+
 
 .hero{
     width: 100%;
@@ -108,57 +118,153 @@ span{
 }
 
 .paradise {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 90%;
+    margin: auto;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.paradise div {
-    margin: 30px;
+.paradise-itens div {
+    width: 30%;
   text-align: center;
   align-items: center;
-  padding-top: 250px;
   border-radius: var(--border-radius);
-}
-
-h2{
-    align-items: center;
-    text-align: center;
-    margin: 20px;
-}
-
-div #esquerda{
-    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)), url(../images/explore1.jpg);
-    width: 350px;
-    height: 500px;
-    background-repeat: no-repeat;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+
+
+.paradise-itens{
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    
+}
+
+.paradise h2{
+    text-align: center;
+    font-size: 6vmin;
 }
 
 div #meio{
     background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)), url(../images/explore2.jpg);
-    width: 350px;
-    height: 500px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    
+}
+
+div #esquerda{
+    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)), url(../images/explore1.jpg);
 }
 
 div #direito{
     background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)), url(../images/explore3.jpg);
-    width: 350px;
-    height: 500px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 
-
-/* width:100%;
-    display:contents;
-    justify-content: center;
+.discover {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)), url(../images/emcasa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
     display: flex;
-    flex-direction: row;
-    align-items: center; */
+    align-items: center;
+}
+
+.discover-content {
+    width: 60%;
+    padding: 50px;
+    color: var(--color-light);
+}
+
+.discover-content h2{
+    font-size: 7vmin;
+}
+
+.discover-content p{
+    font-weight: 600px;
+    margin: 20px;
+    line-height: 32px;
+}
+
+
+.gallery{
+    width: 90%;
+    min-height: 100vh;
+    border: solid 1 px black;
+    margin: 50px auto;
+}
+
+.gallery-title {
+    margin: 30px;
+    text-align: center;
+    font-size: vmin6;
+}
+
+.gallery-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.gallery-item{
+    width: 28%;
+    margin: 30px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 1px 1px 30px #ccc;
+    border-radius: var(--border-radius);
+    transitiom: var(--transition);
+}
+
+.gallery-item img{
+    width: 90%;
+    border-radius: var(--border-radius);
+}
+
+.gallery-item h3{
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.gallery-item:hover{
+    transform: scale(1.1);
+}
+
+.gallery-item p{
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+
+/* Responsivo */
+
+@media(max-width: 1020px){
+
+    .paradise h2 {
+        font-size: 4vmin;
+    }
+    .paradise-itens {
+        flex-wrap: wrap;
+    }
+    .paradise-itens div{
+        
+        width: 80%;
+    }
+}
